@@ -1,0 +1,73 @@
+.my-custom-form {
+padding: 20px 0
+}
+.my-custom-form .image-holder {
+display: table-cell;
+width: auto;
+background: url(https://i.pinimg.com/736x/9d/f9/47/9df947da356fbcc1e5af8a3e3e734532.jpg);
+background-size: cover
+}
+.my-custom-form .form-container {
+display: table;
+max-width: 900px;
+width: 90%;
+margin: 0 auto;
+box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1)
+}
+.my-custom-form form {
+display: table-cell;
+width: 600px;
+background-color: #ffffff;
+padding: 40px 60px;
+color: #505e6c
+}
+@media (max-width:991px) {
+.my-custom-form form {
+padding: 40px
+}
+}
+.my-custom-form form h2 {
+font-size: 24px;
+line-height: 1.5;
+margin-bottom: 30px
+}
+.my-custom-form form .form-control {
+background: transparent;
+border: none;
+border-bottom: 1px solid #dfe7f1;
+border-radius: 0;
+box-shadow: none;
+outline: none;
+color: inherit;
+text-indent: 0px;
+height: 40px
+}
+.my-custom-form form .form-check {
+font-size: 13px;
+line-height: 20px
+}
+.my-custom-form form .btn-primary {
+background: green;
+border: none;
+border-radius: 4px;
+padding: 11px;
+box-shadow: none;
+margin-top: 35px;
+text-shadow: none;
+outline: none !important
+}
+.my-custom-form form .btn-primary:hover,
+.my-custom-form form .btn-primary:active {
+background: green
+}
+.my-custom-form form .btn-primary:active {
+transform: translateY(1px)
+}
+.my-custom-form form .already {
+display: block;
+text-align: center;
+font-size: 12px;
+color: #6f7a85;
+opacity: 0.9;
+text-decoration: none
+}

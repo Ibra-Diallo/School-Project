@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Patient Management System</title>
+    <link
+            href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            id="bootstrap-css"
+            rel="stylesheet"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="/css/style.css" rel="stylesheet"/>
+    <style>
+      .sidenav {
+        background: url("https://www.thestatesman.com/wp-content/uploads/2021/08/Doctors.jpg");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        padding-top: 20px;
+      }
+
+    </style>
+</head>
+<body>
+<div class="sidenav">
+    <div class="sidenav-text">
+        <h1 id="title">
+            Patient<br/>
+            Management <br/>
+            System
+        </h1>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+            <form action="#" method="POST" th:action="@{/register}"
+                  th:object="${user}"> <!-- Here we have the model to which this form is linked to. -->
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input class="form-control" placeholder="First Name" th:field="*{firstName}" type="text"/>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input class="form-control" placeholder="Last Name" th:field="*{lastName}" type="text"/>
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input class="form-control" placeholder="Date of Birth" th:field="*{dateOfBirth}" type="date"/>
+                </div>
+                <div class="form-group">
+                    <label>User Name</label>
+                    <input class="form-control" placeholder="User Name" th:field="*{username}" type="text"/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input
+                            class="form-control"
+                            placeholder="Password"
+                            th:field="*{password}" type="password"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="type">Select user type</label>
+                    <select class="form-control" id="type" th:field="*{roles}">
+                        <option th:value="1">Doctor</option>
+                        <!-- Here we're hardcoding the role ID's for both patient and doctor -->
+                        <option th:value="2">Patient</option>
+                    </select>
+                </div>
+                <button
+                        class="btn"
+                        style="background-color: rgb(26, 221, 52)"
+                        type="submit"
+                >
+                    Register
+                </button>
+            </form>
+            <br/>
+            <a th:href="@{/loginPage}">Already a member. Login Here!</a>
+            <br/>
+            <h4 th:if="${showErrorMessage}" th:text="${errorMessage}"></h4>
+        </div>
+    </div>
+</div>
+</body>
+</html>
